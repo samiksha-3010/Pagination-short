@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import morgan from "morgan";
 import cors from "cors"
 import { Login, Register, getCurrentUser } from "./Controolers/userControolers.js";
-import { AddProduct, allProduct, getYourProducts } from "./Controolers/productControolers.js";
+import { AddProduct, allProducts, getYourProducts } from "./Controolers/productControolers.js";
 import { cheackSeller } from "./Meedleware/AllMeedlware.js";
 
 
@@ -23,7 +23,7 @@ app.post("/register",Register)
 app.post("/login",Login)
 app.post ("get-current-user",getCurrentUser)
 app.post ("add-product", cheackSeller,AddProduct)
-app.post ("/get-product",allProduct)
+app.post ("/get-product",allProducts)
 app.post ("/get-your-products",getYourProducts)
 mongoose.connect(process.env.Mongo_URL).then(() =>{
     console.log("connected to DB..")
