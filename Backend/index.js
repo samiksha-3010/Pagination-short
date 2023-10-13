@@ -25,6 +25,7 @@ app.post ("get-current-user",getCurrentUser)
 app.post ("add-product", cheackSeller,AddProduct)
 app.post ("/get-product",allProducts)
 app.post ("/get-your-products",getYourProducts)
+
 mongoose.connect(process.env.Mongo_URL).then(() =>{
     console.log("connected to DB..")
 })
